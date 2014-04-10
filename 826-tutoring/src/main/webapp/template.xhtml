@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="#{localeBean.language}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <ui:insert name="htmlHead" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+            $(function() {
+                $("li").click(function(e) {
+                    e.preventDefault();
+                    $("li").removeClass("selected");
+                    $(this).addClass("selected");
+                });
+            });
+        </script>
+        <h:outputStylesheet name="default.css" library="css" />
+        <h:outputStylesheet name="cssLayout.css" library="css" />
+
+    </h:head>
+
+    <h:body>
+
+        <div id="topwave" />
+        <div id="top" class="top">
+            <h:graphicImage library="images" name="826VAL_red_logo_web.gif" />
+            <h:graphicImage library="images" name="afterschoolTITLE1.png" />
+        </div>
+
+
+        <ul class="tabrow">
+            <li class="selected"><a href="#">Students</a></li>
+            <li><a href="#">Tutors</a></li>
+        </ul>
+        <div class="center_content">
+            <ui:insert name="body">default content</ui:insert>
+        </div>
+        <div id="bottom">&nbsp;<p>&copy; 2014, 826 Valencia</p></div>
+
+    </h:body>
+
+</html>

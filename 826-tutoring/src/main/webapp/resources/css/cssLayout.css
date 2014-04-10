@@ -1,0 +1,177 @@
+#topwave {
+    height: 20px;
+    position: relative;
+    background-repeat:  repeat-x;
+    background-image: url("#{resource['images/topWave.png']}");
+    content: " ";
+}
+
+#top {
+    position: relative;
+    background-color: white;
+    color: #ee1123;
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+#top img {
+    vertical-align: middle;
+}
+
+#bottom {
+    background-repeat:  repeat-x;
+    background-image: url("#{resource['images/bottomWave.png']}");
+    position: relative;
+    padding: 5px;
+    margin: 0px 0px 0px 0px;
+    font-size: 20px;
+}
+
+#left {
+    background-color: white;
+    border-radius: 25px;
+    -moz-border-radius-topleft: 50px;
+    float: left;
+    color: white;
+    height: 25px;
+    width: 175px;
+    margin: 0px 0px 0px 0px;
+}
+
+#right {
+    border-top-right-radius: 20px;
+    float: right;
+    background-color: #6f6f6f;
+    color: white;
+    padding: 5px;
+    width: 150px;
+}
+
+.center_content {
+    background-color: white;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.left_content {
+    background-color: white;
+}
+
+.right_content {
+    background-color: white;
+    padding: 5px;
+    margin: 0px 170px 0px 170px;
+}
+
+#top a:link, #top a:visited {
+    color: black;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    color: #ee1123;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+#left a:link, #left a:visited {
+    color: #6f6f6f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#left a:link:hover, #left a:visited:hover {
+    color: #ee1123;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.tabrow {
+    list-style: none;
+    margin: 0;
+    padding-left: 5px;
+    line-height: 24px;
+    height: 26px;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 14px;
+    position: relative;
+}
+.tabrow li {
+    border: 1px solid #ecebe6;
+    background: #ecebe6;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+    text-shadow: 0 1px white;
+    margin: 0 -5px;
+    padding: 0 20px;
+}
+.tabrow a {
+    text-decoration: none;
+}
+.tabrow li.selected {
+    background: white;
+    color: white;
+    z-index: 2;
+    border-bottom-color: white;
+}
+.tabrow:before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #ecebe6;
+    z-index: 1;
+}
+/*.tabrow li:before,*/
+.tabrow li:after {
+    border: 1px solid #ecebe6;
+    position: absolute;
+    bottom: -1px;
+    width: 5px;
+    height: 5px;
+    content: " ";
+}
+/*.tabrow li:before {
+    left: -6px;
+    border-bottom-right-radius: 6px;
+    border-width: 0 1px 1px 0;
+    box-shadow: 2px 2px 0 #ecebe6;
+}*/
+.tabrow li:after {
+    right: -6px;
+    border-bottom-left-radius: 6px;
+    border-width: 0 0 1px 1px;
+    box-shadow: -2px 2px 0 #ecebe6;
+}
+.tabrow li.selected:before {
+    box-shadow: 2px 2px 0 white;
+}
+.tabrow li.selected:after {
+    box-shadow: -2px 2px 0 white;
+}
+
+/*** pop-up div to cover entire area ***/
+.divModalDialog  {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    /*! important !*/
+    display:none;
+    /* last attribute set darkness on scale: 0...1.0 */
+    background-color:rgba(0,0,0,0.8);
+    text-align:center;
+    z-index:101;
+}
+/*** ! target attribute does the job ! ***/
+.divModalDialog:target  { 
+    display:block; 
+}
